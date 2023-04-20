@@ -45,12 +45,12 @@ describe("/fruits", () => {
         })
 
         it('should respond with status 200', async () => {
-            const body = {
+            const fruits = {
                 "name": "Uva",
                 "price": 10
             };
 
-            await api.post('/fruits').send(body);
+            await api.post('/fruits').send(fruits);
             const result = await api.get('/fruits/1');
 
             expect(result.body.id).toEqual(1);
